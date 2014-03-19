@@ -1,6 +1,11 @@
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
+@app.route('/my-new-page')
+def my_new_function():
+    print 'HELLO FROM MY NEW FUNCTION'
+    return render_template('new-page.html')
+
 @app.route("/")
 def index():
     return render_template('index.html')
